@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>動物園のご利用案内</title>
+    <style>
+      body {
+        background-color: #f9f9fa; 
+        font-family: 'メイリオ', 'Meiryo', sans-serif;
+        color: #7f8489;
+        font-size: 16px;
+      }
+
+      h1 {
+        color: #7f8489;
+        font-size: 40px;
+        background-color: #dbdcdd;
+      }
+
+      h2 {
+        color: #9da2a5;
+        font-size: 30px;
+        text-decoration: underline;
+      }
+
+      #rules {
+        font-weight: bold;
+        background-color: #e6e3d3;
+        padding: 16px 16px 16px 40px;
+      }
+
+      img {
+        width: 300px; 
+        height: auto; 
+        border: 4px solid gray;
+      }
+
+      .info-table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 10px;
+      }
+
+      .info-table th,
+      .info-table td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+      }
+
+      .info-table th {
+        background-color: #dbdcdd; 
+        color: #555;
+        width: 30%;
+      }
+
+      .info-table td {
+        background-color: #ffffff; 
+      }
+
+      #event-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #612b82; 
+        color: #ffffff; 
+        border: none;
+        border-radius: 4px;
+      }
+    </style>
+</head>
+<body>
+
+    <h1>🐨コアランドのご利用案内🐨</h1>
+    <p>コアラに会える動物園。ルールを守って、楽しい1日をお過ごしください。</p>
+
+    <h2>🐨開園と入場料</h2>
+    <table class="info-table">
+        <tr>
+            <th>開園時間</th>
+            <td>9:00 - 17:00</td>
+        </tr>
+        <tr>
+            <th>入園料</th>
+            <td>大人 1,500円 / 子供 800円</td>
+        </tr>
+        <tr>
+            <th>休園日</th>
+            <td>毎週火曜日</td>
+        </tr>
+    </table>
+
+    <h2>🐨飼育員からお知らせ</h2>
+    <!-- 眠っているコアラの画像_当方にて撮影 -->
+    <img src="koala-sleeping.jpg" alt="ZZZ">
+    <p>動物園では、獣医さんが毎日コアラたちの健康を確認しています。元気に過ごせるよう1頭ずつ丁寧に診察しています！🧑‍⚕️</p>
+
+    <h2>🐨人気のごはんタイム</h2>
+    <!-- 食べているコアラの画像_当方にて撮影 -->
+    <img src="koala-eating.jpg" alt="もぐもぐ">
+    <ul>
+        <li>主食: ユーカリの葉のみを食べます。🍃</li>
+        <li>水分: 葉から水分を十分に摂るため、ほとんど水を飲みません。</li>
+    </ul>
+
+    <h2>🐨本日のおすすめ</h2>
+    <p id="event-message">本日のおすすめイベントを確認できます。</p>
+    <button id="event-button">おすすめを見る</button>
+
+    <h2>🐨ご来園の前に</h2>
+    <ul id="rules">
+        <li>コアラは1日20時間寝ます。</li>
+        <li>ガラスをたたかないでください。</li> 
+        <li>イベント参加は事前予約/追加料金が必要です。※詳細は<a href="https://hug.reservation.example.com" target="_blank">事前予約専用ページ</a>をご確認ください。</li>
+    </ul>
+
+    <script>
+      // 1. ボタン要素を取得する
+      let button = document.getElementById('event-button');
+
+      // 2. ボタンがクリックされた時の処理を登録する
+      button.addEventListener('click', function() {
+        // メッセージの要素を取得して、文字を書き換える
+        let eventMessage = document.getElementById('event-message');
+        eventMessage.innerText = '本日のおすすめ：【要事前予約/有料】抱っこ体験（13:00〜）です📸';
+        });
+    </script>
+</body>
+</html>
