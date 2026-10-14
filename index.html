@@ -124,16 +124,23 @@
         <li>イベント参加は事前予約/追加料金が必要です。※詳細は<a href="reservation.html">事前予約専用ページ</a>をご確認ください。</li>
     </ul>
 
-    <script>
-      // 1. ボタン要素を取得する
-      let button = document.getElementById('event-button');
+    <script>    
+     const button = document.getElementById('event-button');
+     const eventMessage = document.getElementById('event-message');
+     const initialMessage = eventMessage.innerText;
+     let isShowing = false;
 
-      // 2. ボタンがクリックされた時の処理を登録する
-      button.addEventListener('click', function() {
-        // メッセージの要素を取得して、文字を書き換える
-        let eventMessage = document.getElementById('event-message');
-        eventMessage.innerText = '本日のおすすめ：【要事前予約/有料】抱っこ体験（13:00〜）です📸';
-        });
+     button.addEventListener('click', function() {
+    if (isShowing) {
+        eventMessage.innerText = initialMessage;
+        button.innerText = 'おすすめを見る';
+        isShowing = false;
+    } else {
+        eventMessage.innerText = '本日のおすすめ：【要事前予約/有料】抱っこ体験（13:00〜）です:camera_with_flash:';
+        button.innerText = '元に戻す';
+        isShowing = true;
+    }
+   });       
     </script>
 </body>
 </html>
